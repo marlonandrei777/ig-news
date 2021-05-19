@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { SubscriberButton } from '../components/SubscriberButton';
 
 import styles from './home.module.scss';
-import { stripe } from './services/stripe';
+import { stripe } from '../services/stripe';
 
 interface HomeProps {
   product: {
