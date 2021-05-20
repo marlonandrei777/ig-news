@@ -30,7 +30,7 @@ export default NextAuth({
               q.Exists(
                 q.Match(
                   q.Index('user_by_email'),
-                  q.Casefold(user.email)
+                  q.Casefold(user.email) // normaliza o case do email p fica lowercase
                 )
               )
             ),
@@ -38,10 +38,11 @@ export default NextAuth({
               q.Collection('users'),
               { data: { email } }
             ),
+            // se o usuario existe (else)
             q.Get(
               q.Match(
                 q.Index('user_by_email'),
-                q.Casefold(user.email)
+                q.Casefold(user.email) 
               )
             )
           )
