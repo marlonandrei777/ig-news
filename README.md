@@ -12,7 +12,7 @@
 
 ## 💻 Projeto
 
-Aplicação de um blog pago onde o usuário loga com a sua conta  do GitHub e paga sua inscrição usando o Stripe. Usuários que não possuem a inscrição, só conseguem ver alguns parágrafos iniciais do post, orefecendo a inscrição logo abaixo.
+Aplicação de um blog pago onde o usuário loga com a sua conta  do GitHub e paga sua inscrição usando o Stripe. Usuários que não possuem a inscrição, só conseguem ver alguns parágrafos iniciais do post, oferecendo a inscrição logo abaixo.
 
 ## 🔥 Tecnologias
 
