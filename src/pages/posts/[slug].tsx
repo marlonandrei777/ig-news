@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 import Head from "next/head";
 import { RichText } from "prismic-dom";
 import { getPrismicClient } from "../../services/prismic";
@@ -38,9 +38,9 @@ export default function Post({ post }: PostProps) {
 
 export const getServerSideProps: GetServerSideProps = async ({ req, params }) => {
     // pegar de dentro dos cookies pra saber se o usuário ta logado ou n
-    const session = await getSession({ req })
+    const session: any = await getSession({ req })
     // acesso ao slug do post q eu quero carregar
-    const { slug } = params;
+    const { slug }: any = params;
 
     if (!session?.activeSubscription) {
         return {

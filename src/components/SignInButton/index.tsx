@@ -6,17 +6,17 @@ import styles from './styles.module.scss';
 
 export function SignInButton() {
     // autentication
-    const { data } = useSession();
+    const { data: session }: any = useSession();
 
     // o return já é algo condicional
-    return data ? (
+    return session ? (
         <button
             className={styles.signInButton}
             type="button"
             onClick={() => signOut()}
         >
             <FaGithub color="#04d361" />
-            {data.user.name}
+            {session.user.name}
             <FiX color="#737380" margin-left="1rem" />
         </button>
 

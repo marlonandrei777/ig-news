@@ -1,11 +1,11 @@
-import { signIn, useSession } from 'next-auth/client';
+import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { api } from '../../services/api';
 import { getStripeJs } from '../../services/stripe-js';
 import styles from './styles.module.scss';
 
 export function SubscriberButton() {
-    const [session] = useSession()
+    const { data: session }: any = useSession()
     const router = useRouter()
 
     async function handleSubscribe() {
@@ -14,7 +14,7 @@ export function SubscriberButton() {
             return;
         }
 
-        if (session.activeSubscription) {
+        if (session?.activeSubscription) {
             router.push('/posts');
             return;
         }
