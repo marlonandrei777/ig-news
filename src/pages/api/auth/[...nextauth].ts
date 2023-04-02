@@ -17,7 +17,7 @@ export default NextAuth({
     signingKey: process.env.SIGNING_KEY,
   }, */
   callbacks: {
-    async session(session: any) {
+    async session({ session }) {
       try {
         const UserActiveSubscription = await fauna.query(
           q.Get(
